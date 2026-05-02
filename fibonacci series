@@ -1,0 +1,22 @@
+package Ubit;
+
+import java.util.Scanner;
+
+public class fibo {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the fibonacci num : ");
+        int x = input.nextInt();
+        int i=1;
+        int y=1;
+
+        for (int r=1; r <=x; r++) {
+            int z;
+            z = i + y;
+            System.out.print(i+" ");
+            i = y;
+            y = z;
+
+        }
+    }
+}
