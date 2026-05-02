@@ -1,0 +1,17 @@
+package Ubit;
+
+import java.util.Scanner;
+
+public class invertTriangle {
+    static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int x = input.nextInt();
+
+        for(int i=1; i<=x ;i++){
+            for (int j=x ; j>=i ; j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
