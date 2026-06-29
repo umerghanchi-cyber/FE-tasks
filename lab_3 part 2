@@ -1,0 +1,17 @@
+package Lab03_CalculatorOverloading;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Calculator obj = new Calculator();
+
+        System.out.println("Integer Addition = " + obj.add(10, 20));
+
+        System.out.println("Double Addition = " + obj.add(5.5, 4.5));
+
+        System.out.println("Max of 2 = " + obj.max(15, 25));
+
+        System.out.println("Max of 3 = " + obj.max(10, 40, 20));
+    }
+}
