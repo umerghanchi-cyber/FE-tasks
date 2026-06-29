@@ -1,0 +1,42 @@
+package Lab07_CSV_FileHandling;
+
+import java.io.*;
+
+public class Task2_AveragePrice {
+
+    public static void main(String[] args) {
+
+        String file = "products.csv";
+
+        double total = 0;
+        int count = 0;
+
+        try {
+
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+
+            String line;
+
+            reader.readLine();
+
+            while ((line = reader.readLine()) != null) {
+
+                String[] data = line.split(",");
+
+                total += Double.parseDouble(data[1]);
+                count++;
+            }
+
+            reader.close();
+
+            double average = total / count;
+
+            System.out.println("Average Price: " + average + " PKR");
+            System.out.println("Number of Products: " + count);
+
+        } catch (Exception e) {
+
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
