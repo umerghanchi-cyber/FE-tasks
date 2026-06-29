@@ -1,0 +1,34 @@
+package Lab06_ArrayListTasks;
+
+import java.util.ArrayList;
+
+public class Task4_ReverseArrayList {
+
+    public static void main(String[] args) {
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        int start = 0;
+        int end = numbers.size() - 1;
+
+        while (start < end) {
+
+            int temp = numbers.get(start);
+
+            numbers.set(start, numbers.get(end));
+
+            numbers.set(end, temp);
+
+            start++;
+            end--;
+        }
+
+        System.out.println("Reversed ArrayList: " + numbers);
+    }
+}
