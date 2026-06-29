@@ -1,0 +1,46 @@
+package Lab07_CSV_FileHandling;
+
+import java.io.*;
+
+public class Task1_FilterStudents {
+
+    public static void main(String[] args) {
+
+        String inputFile = "students.csv";
+        String outputFile = "honor_students.csv";
+
+        try {
+
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
+
+            String line;
+
+            // Copy Header
+            line = reader.readLine();
+            writer.write(line);
+            writer.newLine();
+
+            while ((line = reader.readLine()) != null) {
+
+                String[] data = line.split(",");
+
+                double gpa = Double.parseDouble(data[3]);
+
+                if (gpa >= 3.5) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            }
+
+            reader.close();
+            writer.close();
+
+            System.out.println("Honor students file created successfully.");
+
+        } catch (Exception e) {
+
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
