@@ -1,0 +1,38 @@
+package Lab06_ArrayListTasks;
+
+import java.util.ArrayList;
+
+public class Task2_DuplicateElements {
+
+    public static void main(String[] args) {
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(2);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(3);
+        numbers.add(6);
+        numbers.add(1);
+
+        ArrayList<Integer> duplicates = new ArrayList<>();
+
+        for (int i = 0; i < numbers.size(); i++) {
+
+            for (int j = i + 1; j < numbers.size(); j++) {
+
+                if (numbers.get(i).equals(numbers.get(j))) {
+
+                    if (!duplicates.contains(numbers.get(i))) {
+                        duplicates.add(numbers.get(i));
+                    }
+                }
+            }
+        }
+
+        System.out.println("Duplicates: " + duplicates);
+    }
+}
